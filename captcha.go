@@ -9,20 +9,20 @@ func main() {
 func Captcha(pattern, operand1, operator, operand2 int) string {
 
 	// patTern := [2]string{"1", "2"}
-	opeRand1 := [5]int{1, 2, 3, 4, 5}
+	// opeRand1 := [5]int{1, 2, 3, 4, 5}
 	opeRator := [3]string{"+", "-", "*"}
-	opeRand2 := [5]string{"one", "two", "three", "four", "five"}
+	opeRand := [5]string{"one", "two", "three", "four", "five"}
 
 	op1 := ""
 	oper := ""
 	op2 := ""
 	result := ""
 
-	for i, v := range opeRand1 {
-		if i+1 == operand1 {
-			op1 = strconv.Itoa(v)
-		}
-	}
+	// for i, v := range opeRand1 {
+	// 	if i+1 == operand1 {
+	// 		op1 = strconv.Itoa(v)
+	// 	}
+	// }
 
 	for i, v := range opeRator {
 		if i+1 == operator {
@@ -30,7 +30,10 @@ func Captcha(pattern, operand1, operator, operand2 int) string {
 		}
 	}
 
-	for i, v := range opeRand2 {
+	for i, v := range opeRand {
+		if i+1 == operand1 {
+			op1 = strconv.Itoa(i + 1)
+		}
 		if i+1 == operand2 {
 			op2 = v
 		}
