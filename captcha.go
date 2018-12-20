@@ -1,5 +1,7 @@
 package main
 
+import "strconv"
+
 func main() {
 	// Captcha(1, 1, 1, 1)
 }
@@ -7,7 +9,7 @@ func main() {
 func Captcha(pattern, operand1, operator, operand2 int) string {
 
 	// patTern := [2]string{"1", "2"}
-	opeRand1 := [5]string{"1", "2", "3", "4", "5"}
+	opeRand1 := [5]int{1, 2, 3, 4, 5}
 	opeRator := [3]string{"+", "-", "*"}
 	opeRand2 := [5]string{"one", "two", "three", "four", "five"}
 
@@ -18,7 +20,7 @@ func Captcha(pattern, operand1, operator, operand2 int) string {
 
 	for i, v := range opeRand1 {
 		if i+1 == operand1 {
-			op1 = v
+			op1 = strconv.Itoa(v)
 		}
 	}
 
@@ -33,7 +35,9 @@ func Captcha(pattern, operand1, operator, operand2 int) string {
 			op2 = v
 		}
 	}
+
 	result = op1 + oper + op2
+
 	return result
 
 	// if operand2 == 1 {
