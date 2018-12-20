@@ -11,7 +11,7 @@ func Captcha(pattern, operand1, operator, operand2 int) string {
 	// patTern := [2]string{"1", "2"}
 	// opeRand1 := [5]int{1, 2, 3, 4, 5}
 	opeRator := [3]string{"+", "-", "*"}
-	opeRand := [5]string{"one", "two", "three", "four", "five"}
+	opeRand := [9]string{"one", "two", "three", "four", "five", "six", "seven", "eigth", "nine"}
 
 	op1 := ""
 	oper := ""
@@ -23,7 +23,7 @@ func Captcha(pattern, operand1, operator, operand2 int) string {
 	// 		op1 = strconv.Itoa(v)
 	// 	}
 	// }
-	if pattern < 3 {
+	if pattern <= 2 && pattern >= 1 && operand1 <= 9 && operand1 >= 1 && operator <= 3 && operator >= 1 && operand2 <= 9 && operand2 >= 1 {
 
 		for i, v := range opeRator {
 			if i+1 == operator {
