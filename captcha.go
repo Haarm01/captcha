@@ -8,15 +8,23 @@ func Captcha(pattern, operand1, operator, operand2 int) string {
 
 	// patTern := [2]string{"1", "2"}
 	// opeRand1 := [5]string{"1", "2", "3", "4", "5"}
-	// opeRator := [3]string{"+", "-", "*"}
+	opeRator := [3]string{"+", "-", "*"}
 	opeRand2 := [5]string{"one", "two", "three", "four", "five"}
+
+	oper := ""
 	op2 := ""
 	result := ""
+
+	for i, v := range opeRator {
+		if i+1 == operator {
+			oper = v
+		}
+	}
 
 	for i, v := range opeRand2 {
 		if i+1 == operand2 {
 			op2 = v
-			result = "1+" + op2
+			result = "1" + oper + op2
 		}
 	}
 	return result
