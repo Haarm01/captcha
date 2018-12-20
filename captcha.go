@@ -23,19 +23,29 @@ func Captcha(pattern, operand1, operator, operand2 int) string {
 	// 		op1 = strconv.Itoa(v)
 	// 	}
 	// }
+	if pattern < 3 {
 
-	for i, v := range opeRator {
-		if i+1 == operator {
-			oper = v
+		for i, v := range opeRator {
+			if i+1 == operator {
+				oper = v
+			}
 		}
-	}
 
-	for i, v := range opeRand {
-		if i+1 == operand1 {
-			op1 = strconv.Itoa(i + 1)
-		}
-		if i+1 == operand2 {
-			op2 = v
+		for i, v := range opeRand {
+			if i+1 == operand1 {
+				if pattern == 1 {
+					op1 = strconv.Itoa(i + 1)
+				} else {
+					op1 = v
+				}
+			}
+			if i+1 == operand2 {
+				if pattern == 1 {
+					op2 = v
+				} else {
+					op2 = strconv.Itoa(i + 1)
+				}
+			}
 		}
 	}
 
