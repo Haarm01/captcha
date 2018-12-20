@@ -10,11 +10,13 @@ func Captcha(pattern, operand1, operator, operand2 int) string {
 	// opeRand1 := [5]string{"1", "2", "3", "4", "5"}
 	// opeRator := [3]string{"+", "-", "*"}
 	opeRand2 := [5]string{"one", "two", "three", "four", "five"}
+	op2 := ""
 	result := ""
 
 	for i, v := range opeRand2 {
 		if i+1 == operand2 {
-			result = "1+" + v
+			op2 = v
+			result = "1+" + op2
 		}
 	}
 	return result
