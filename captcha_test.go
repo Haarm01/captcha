@@ -6,7 +6,7 @@ import (
 	"testing"
 )
 
-func TestCaptcha1111To1115Say1PlusOneToFive(t *testing.T) {
+func TestCaptchaEveryCase(t *testing.T) {
 
 	opeRand := [9]string{"one", "two", "three", "four", "five", "six", "seven", "eigth", "nine"}
 	opeRator := [3]string{"+", "-", "*"}
